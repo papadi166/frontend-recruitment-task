@@ -2,22 +2,30 @@
   "name": "gravity-global-recruitment-task",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
+  },
+  "engines": {
+    "node": ">=16.0 <17.0"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.2",
-    "gulp-cli": "^2.2.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2"
+    "@babel/cli": "7.15.x",
+    "@babel/core": "7.15.x",
+    "@babel/plugin-transform-runtime": "7.16.5",
+    "@babel/preset-env": "7.15.x",
+    "@babel/polyfill": "7.12.x",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-loader": "8.2.x",
+    "css-loader": "6.5.x",
+    "css-minimizer-webpack-plugin": "^4.0.0",
+    "mini-css-extract-plugin": "0.11.x",
+    "node-sass-glob-importer": "5.3.x",
+    "sass": "1.43.x",
+    "sass-loader": "12.3.x",
+    "webpack": "5.64.x",
+    "webpack-cli": "4.9.x"
   }
 }
