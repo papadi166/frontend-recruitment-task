@@ -15,6 +15,7 @@ const baseConfig = {
         filename: "[name].js",
         path: path.resolve(__dirname, "dist"),
         publicPath: "./",
+        assetModuleFilename: 'images/[name].[ext]'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -82,14 +83,23 @@ const baseConfig = {
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/i,
-                type: "asset/resource",
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: './images',
+                    publicPath: './images',
+                    esModule: false,
+                }
+                
+               
             },
             {
                 test: /\.(woff2?|ttf|eot|otf)(\?v=\w+)?$/,
                 exclude: /(node_modules|bower_components)/,
                 type: "asset",
+              
                 generator: {
-                    filename: "fonts/[name][ext][query]",
+                    filename: "./fonts/[name][ext][query]",
                 },
                 parser: {
                     dataUrlCondition: {
@@ -105,7 +115,7 @@ const baseConfig = {
     devtool: false,
     devServer: {
         hot: true,
-        static: './dist',
+        static: './',
         historyApiFallback: {
             index: 'index.html'
           },
