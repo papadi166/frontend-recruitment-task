@@ -5,8 +5,9 @@ const moduleButtons = document.querySelectorAll('.module-button');
 const modalOverlay = document.querySelector('#modal-overlay');
 const clickedCounterElement = document.querySelector('#clicked-counter');
 
-let clickedCounter = 0;
-
+let clickedCounter = null;
+if(sessionStorage.getItem("clickedCounter") == null)
+    sessionStorage.setItem("clickedCounter", 0);
 
 
 modalClose.addEventListener('click', () => {
@@ -21,8 +22,9 @@ modalOverlay.addEventListener('click', () => {
 
 moduleButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        clickedCounter++;
-        clickedCounterElement.innerHTML = clickedCounter;
+        clickedCounter = parseInt(sessionStorage.getItem("clickedCounter"));
+        sessionStorage.setItem("clickedCounter", clickedCounter+1);
+        clickedCounterElement.innerHTML = sessionStorage.getItem("clickedCounter");
         modalOverlay.classList.remove('is-hidden');
         modalOverlay.classList.add('is-active');
     });
