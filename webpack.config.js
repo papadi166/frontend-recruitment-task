@@ -2,9 +2,11 @@ const path = require("path");
 const globImporter = require("node-sass-glob-importer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 const Without = require("./tools/webpack-without");
 
 const baseConfig = {
+    
     entry: {
         all: ["./src/js/main.js"],
         main: ["./src/scss/main.scss"],
@@ -15,6 +17,10 @@ const baseConfig = {
         publicPath: "./",
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            filename: "main.html",
+            template: path.resolve(__dirname, "index.html"),
+            }), 
         new MiniCssExtractPlugin({
             filename: "[name].css",
         }),
@@ -97,6 +103,19 @@ const baseConfig = {
         minimizer: [`...`, new CssMinimizerPlugin()],
     },
     devtool: false,
+    devServer: {
+        hot: true,
+        static: './dist',
+        historyApiFallback: {
+            index: 'main.html'
+          },
+        port: 5001,
+        open:true,
+ 
+      },
+      optimization: {
+        runtimeChunk: 'single',
+      },
 };
 
 module.exports = (env, options) => {

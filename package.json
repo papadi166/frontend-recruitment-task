@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "prod": "webpack --mode production",
-    "dev": "webpack --mode development --watch"
+    "dev": "webpack --mode development --watch ",
+    "start": "webpack serve --open "
   },
   "engines": {
     "node": ">=16.0 <17.0"
@@ -15,8 +16,8 @@
     "@babel/cli": "7.15.x",
     "@babel/core": "7.15.x",
     "@babel/plugin-transform-runtime": "7.16.5",
-    "@babel/preset-env": "7.15.x",
     "@babel/polyfill": "7.12.x",
+    "@babel/preset-env": "7.15.x",
     "babel-core": "7.0.0-bridge.0",
     "babel-loader": "8.2.x",
     "css-loader": "6.5.x",
@@ -26,6 +27,7 @@
     "sass": "1.43.x",
     "sass-loader": "12.3.x",
     "webpack": "5.64.x",
-    "webpack-cli": "4.9.x"
+    "webpack-cli": "4.10.0",
+    "webpack-dev-server": "^4.11.1"
   }
 }
