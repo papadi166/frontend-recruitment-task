@@ -22,6 +22,7 @@
     "babel-loader": "8.2.x",
     "css-loader": "6.5.x",
     "css-minimizer-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "0.11.x",
     "node-sass-glob-importer": "5.3.x",
     "sass": "1.43.x",
