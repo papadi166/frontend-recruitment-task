@@ -46,7 +46,7 @@
 }
 
 .module-button {
-  background-color: #E4C1AE;
+  background-color: #824220;
   border-radius: 5rem;
   border: none;
   color: white;
@@ -59,8 +59,8 @@
 }
 
 .module-button:hover {
-  background-color: #C4A38E;
   cursor: pointer;
+  background-color: #6B3319;
 }
 
 @font-face {
