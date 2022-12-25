@@ -18,7 +18,7 @@ const baseConfig = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: "main.html",
+            filename: "index.html",
             template: path.resolve(__dirname, "index.html"),
             }), 
         new MiniCssExtractPlugin({
@@ -107,7 +107,7 @@ const baseConfig = {
         hot: true,
         static: './dist',
         historyApiFallback: {
-            index: 'main.html'
+            index: 'index.html'
           },
         port: 5001,
         open:true,
