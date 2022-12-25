@@ -107,6 +107,7 @@ module.exports = (env, options) => {
     } else {
         baseConfig.mode = "development";
         baseConfig.devtool = "source-map";
+        
     }
 
     return baseConfig;
