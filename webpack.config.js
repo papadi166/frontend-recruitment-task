@@ -82,7 +82,7 @@ const baseConfig = {
                 type: "asset/inline",
             },
             {
-                test: /\.(png|jpg|jpeg|gif)$/i,
+                test: /\.(png|jpg|jpeg|gif|webp)$/i,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]',
@@ -120,7 +120,7 @@ const baseConfig = {
             index: 'index.html'
           },
         port: 5001,
-        open:true,
+        open: true,
  
       },
       optimization: {
