@@ -9,7 +9,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 5rem;   
+    height: 5rem;
     background-color: #ffffff;
     box-shadow: 0px 2.3px 2px rgba(0, 0, 0, 0.20);
     display: flex;
@@ -29,7 +29,7 @@
     width: 13rem;
     height: 50%;
     padding: 0.5rem;
-    font-family: "Helvetica Neue",Helvetica,Arial;
+    font-family: "Helvetica Neue", Helvetica, Arial;
     font-size: 1rem;
     font-weight: 500;
     color: transparent;
@@ -65,8 +65,8 @@
     cursor: pointer;
     color: #4f4f4f;
 }
-.module-container
-{
+
+.module-container {
     margin-top: 7rem;
     display: flex;
     flex-direction: column;
@@ -87,50 +87,61 @@
     gap: 6rem;
     width: 78%;
     height: 100%;
-    
-    
+
+
 }
 
 .module-title {
     font-size: 42px;
     font-family: 'Roboto', Courier, monospace;
-    font-weight: 700;@keyframes shake {
-    0% {
-        transform: translate(1px, 1px) rotate(0deg);
-    } 
-    20% {
-        transform: translate(-3px, 0px) rotate(1deg);
-    }
-    40% {
-        transform: translate(1px, -1px) rotate(1deg);
-    }
-    60% {
-        transform: translate(-3px, 1px) rotate(0deg);
-    }
-    80% {
-        transform: translate(-1px, -1px) rotate(1deg);
-    }
-    100% {
-        transform: translate(1px, -2px) rotate(-1deg);
-    }
+    font-weight: 700;
+
+    @keyframes shake {
+        0% {
+            transform: translate(1px, 1px) rotate(0deg);
+        }
+
+        20% {
+            transform: translate(-3px, 0px) rotate(1deg);
+        }
+
+        40% {
+            transform: translate(1px, -1px) rotate(1deg);
+        }
+
+        60% {
+            transform: translate(-3px, 1px) rotate(0deg);
+        }
+
+        80% {
+            transform: translate(-1px, -1px) rotate(1deg);
+        }
+
+        100% {
+            transform: translate(1px, -2px) rotate(-1deg);
+        }
     }
 
     @keyframes expand {
-    0% {
-        background-size: 50%;
-        background-position: 0 0;
+        0% {
+            background-size: 50%;
+            background-position: 0 0;
+        }
+
+        20% {
+            background-size: 55%;
+            background-position: 0 1em;
+        }
+
+        100% {
+            background-size: 325%;
+            background-position: -13em -4em;
+        }
     }
-    20% {
-        background-size: 55%;
-        background-position: 0 1em;
-    }
-    100% {
-        background-size: 325%;
-        background-position: -13em -4em;
-    }
-    }
+
     line-height: 50.4px;
 }
+
 .module-content {
     display: flex;
     flex-direction: column;
@@ -144,6 +155,7 @@
     font-weight: 300;
 
 }
+
 .module-image {
     width: 31.5rem;
     height: 21rem;
@@ -158,13 +170,14 @@
     height: 100%;
     gap: 1rem;
 }
+
 .module-button {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #207882;
     border-radius: 5rem;
-    border: none; 
+    border: none;
     color: white;
     font-weight: 700;
     font-size: 1rem;
@@ -186,7 +199,7 @@
     justify-content: center;
     background-color: #824220;
     border-radius: 5rem;
-    border: none; 
+    border: none;
     color: white;
     font-weight: 700;
     font-size: 1rem;
@@ -199,18 +212,18 @@
         cursor: pointer;
         background-color: #974d25;
     }
-    
+
 }
 
 @font-face {
     font-family: Roboto;
     src: url('../fonts/Roboto-Bold.ttf');
-  }
+}
 
-  @font-face {
+@font-face {
     font-family: RobotoLight;
     src: url('../fonts/Roboto-Light.ttf');
-  }
+}
 
 #modal-overlay {
     position: fixed;
@@ -225,7 +238,7 @@
     z-index: 100;
 }
 
-#modal { 
+#modal {
     position: relative;
     width: 57rem;
     height: 12rem;
@@ -235,7 +248,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    
+
 }
 
 #modal-content {
@@ -260,7 +273,7 @@
     font-family: 'Roboto';
     font-size: 1.8rem;
     line-height: 120%;
-    color:  #121212;
+    color: #121212;
 }
 
 #modal-body {
@@ -281,18 +294,18 @@
     justify-content: space-between;
     width: 100%;
     height: 3rem;
-}   
+}
 
 #modal-nav {
     position: absolute;
     top: 2.1rem;
     right: 2.1rem;
     display: flex;
- 
+
     height: 3rem;
 
-    > #modal-nav-close {
-        
+    >#modal-nav-close {
+
         border: none;
         background-color: white;
         width: 1.6rem;
@@ -301,7 +314,7 @@
         content: url('https://api.iconify.design/material-symbols/close-rounded.svg');
     }
 
-    > #modal-nav-close:hover {
+    >#modal-nav-close:hover {
         cursor: pointer;
     }
 }
@@ -314,51 +327,58 @@
     display: none;
 }
 
-.reverse  {
+.reverse {
     align-items: end;
     justify-content: end;
     text-align: end;
-    
+
 }
 
 .smooth-color {
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-  cursor: pointer;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+    cursor: pointer;
 }
 
 @keyframes shake {
     0% {
         transform: translate(1px, 1px) rotate(0deg);
-    } 
+    }
+
     20% {
         transform: translate(-3px, 0px) rotate(1deg);
     }
+
     40% {
         transform: translate(1px, -1px) rotate(1deg);
     }
+
     60% {
         transform: translate(-3px, 1px) rotate(0deg);
     }
+
     80% {
         transform: translate(-1px, -1px) rotate(1deg);
     }
+
     100% {
         transform: translate(1px, -2px) rotate(-1deg);
     }
-    }
+}
 
 @keyframes expand {
     0% {
         background-size: 50%;
         background-position: 0 0;
     }
+
     20% {
         background-size: 55%;
         background-position: 0 1em;
     }
+
     100% {
         background-size: 325%;
         background-position: -13em -4em;
     }
-    }
+}
