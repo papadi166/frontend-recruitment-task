@@ -115,7 +115,7 @@ const baseConfig = {
     devtool: false,
     devServer: {
         hot: true,
-        static: './',
+        static: './dist',
         historyApiFallback: {
             index: 'index.html'
           },
