@@ -4,19 +4,51 @@
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _img_sean_o_KMn4VEeEPR8_unsplash_1_s6zmfh_ar_1_1_c_fill_g_auto_c_scale_w_450_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_ar_1_1,c_fill,g_auto__c_scale,w_450.jpg */ "./src/img/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_ar_1_1,c_fill,g_auto__c_scale,w_450.jpg");
-/* harmony import */ var _img_sean_o_KMn4VEeEPR8_unsplash_1_s6zmfh_ar_1_1_c_fill_g_auto_c_scale_w_450_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_img_sean_o_KMn4VEeEPR8_unsplash_1_s6zmfh_ar_1_1_c_fill_g_auto_c_scale_w_450_jpg__WEBPACK_IMPORTED_MODULE_0__);
-
+//--------------------//
+// Global Variables   //
+//--------------------//
+const modules = document.querySelectorAll('.module');
 const modalClose = document.querySelector('#modal-nav-close');
 const moduleButtons = document.querySelectorAll('.module-button');
 const modalOverlay = document.querySelector('#modal-overlay');
 const clickedCounterElement = document.querySelector('#clicked-counter');
 let clickedCounter = null;
-if (sessionStorage.getItem("clickedCounter") == null) sessionStorage.setItem("clickedCounter", 0);
+
+//--------------------//
+//      Functions     //
+//--------------------//
+
+// creates item in session storage for each module
+const createModuleSession = () => {
+  let i = 0;
+  modules.forEach(module => {
+    let moduleName = `module${i++}`;
+    // if module item is not not in session storage yer, we set it to 0
+    if (sessionStorage.getItem(moduleName) == null) sessionStorage.setItem(moduleName, 0);
+  });
+};
+
+// ? we may need to find another way to name module if we'd like to use CMS, for example by setting before button id rather than looping from 0 to X.
+// Here we set new value for each module click and load it from into modal body
+// also we show modal
+const updateModuleSession = () => {
+  let i = 0;
+  moduleButtons.forEach(moduleButton => {
+    let moduleName = `module${i++}`;
+    moduleButton.addEventListener('click', () => {
+      clickedCounter = parseInt(sessionStorage.getItem(moduleName));
+      sessionStorage.setItem(moduleName, clickedCounter + 1);
+      clickedCounterElement.innerHTML = sessionStorage.getItem(moduleName);
+      modalOverlay.classList.remove('is-hidden');
+      modalOverlay.classList.add('is-active');
+      console.log(sessionStorage.getItem(moduleName));
+    });
+  });
+};
+
+// make evenents to close modal
 modalClose.addEventListener('click', () => {
   modalOverlay.classList.remove('is-active');
   modalOverlay.classList.add('is-hidden');
@@ -25,26 +57,14 @@ modalOverlay.addEventListener('click', () => {
   modalOverlay.classList.remove('is-active');
   modalOverlay.classList.add('is-hidden');
 });
-moduleButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    clickedCounter = parseInt(sessionStorage.getItem("clickedCounter"));
-    sessionStorage.setItem("clickedCounter", clickedCounter + 1);
-    clickedCounterElement.innerHTML = sessionStorage.getItem("clickedCounter");
-    modalOverlay.classList.remove('is-hidden');
-    modalOverlay.classList.add('is-active');
-  });
-});
+
+//--------------------//
+// Main Function Call //
+//-------------------- //
+
+createModuleSession();
+updateModuleSession();
 console.log('Hello from main.js');
-
-/***/ }),
-
-/***/ "./src/img/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_ar_1_1,c_fill,g_auto__c_scale,w_450.jpg":
-/*!**********************************************************************************************!*\
-  !*** ./src/img/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_ar_1_1,c_fill,g_auto__c_scale,w_450.jpg ***!
-  \**********************************************************************************************/
-/***/ ((module) => {
-
-module.exports = "./images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_ar_1_1,c_fill,g_auto__c_scale,w_450.jpg";
 
 /***/ })
 
