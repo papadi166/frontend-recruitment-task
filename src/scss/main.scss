@@ -5,11 +5,11 @@
 }
 
 #nav {
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 5rem;
+    height: 5rem;   
     background-color: #ffffff;
     box-shadow: 0px 2.3px 2px rgba(0, 0, 0, 0.20);
     display: flex;
@@ -67,6 +67,7 @@
 }
 .module-container
 {
+    margin-top: 7rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,7 +138,7 @@
     justify-content: space-between;
     width: 23rem;
     height: 100%;
-    gap: 12px;
+    gap: 1rem;
     font-family: 'RobotoLight';
     line-height: 150%;
     font-weight: 300;
@@ -317,6 +318,7 @@
     align-items: end;
     justify-content: end;
     text-align: end;
+    
 }
 
 .smooth-color {

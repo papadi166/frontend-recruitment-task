@@ -5,7 +5,7 @@
 }
 
 #nav {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -64,6 +64,7 @@
 }
 
 .module-container {
+  margin-top: 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,7 +134,7 @@
   justify-content: space-between;
   width: 23rem;
   height: 100%;
-  gap: 12px;
+  gap: 1rem;
   font-family: "RobotoLight";
   line-height: 150%;
   font-weight: 300;
