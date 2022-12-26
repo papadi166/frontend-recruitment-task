@@ -32,16 +32,53 @@ const createModuleSession= () => {
 // also we show modal
 const updateModuleSession = () => {
     let i = 0;
-    moduleButtons.forEach((moduleButton) => {
+    modules.forEach((module) => {
+        
         let moduleName = `module${i++}`
+        const moduleButton = module.querySelector('.module-button');
+        const moduleResetButton = module.querySelector('.module-reset-button');
+        
+        
+        
+        // set main button
         moduleButton.addEventListener('click', () => {
+            console.log(moduleName)
             clickedCounter = parseInt(sessionStorage.getItem(moduleName));
-            sessionStorage.setItem(moduleName, clickedCounter+1);
+            let newValue =  clickedCounter + 1;
+            sessionStorage.setItem(moduleName, newValue);
             clickedCounterElement.innerHTML = sessionStorage.getItem(moduleName);
             modalOverlay.classList.remove('is-hidden');
             modalOverlay.classList.add('is-active');
             console.log( sessionStorage.getItem(moduleName));
+            // showing reset button if counter is over 5
+            
+            clickedCounter = parseInt(sessionStorage.getItem(moduleName));
+            console.log(clickedCounter)
+            
+            if(clickedCounter > 5) {
+                moduleResetButton.classList.remove('is-hidden')
+                moduleResetButton.classList.add('is-active')
+            }
         });
+
+        // set reset button
+        moduleResetButton.addEventListener('click', () => {
+            sessionStorage.setItem(moduleName, 0);
+
+            // hiding reset button if counter is over 5
+            clickedCounter = parseInt(sessionStorage.getItem(moduleName));
+            console.log(clickedCounter)
+            
+            moduleResetButton.classList.remove('is-active')
+            moduleResetButton.classList.add('is-hidden')
+        });
+        
+    clickedCounter = parseInt(sessionStorage.getItem(moduleName));
+    // check if counter is over 5 at function call
+    if(clickedCounter > 5) {
+        moduleResetButton.classList.remove('is-hidden')
+        moduleResetButton.classList.add('is-active')
+    }
        
     });
 }
@@ -53,9 +90,12 @@ modalClose.addEventListener('click', () => {
     modalOverlay.classList.add('is-hidden');
 });
 
-modalOverlay.addEventListener('click', () => {
-    modalOverlay.classList.remove('is-active');
-    modalOverlay.classList.add('is-hidden');
+modalOverlay.addEventListener('click', (event) => {
+    console.log(event.target.id)
+    if(event.target.id === 'modal-overlay') {
+        modalOverlay.classList.remove('is-active');
+        modalOverlay.classList.add('is-hidden');
+    }
 });
 
 
