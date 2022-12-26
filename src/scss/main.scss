@@ -398,12 +398,23 @@
     }
 }
 
+@media screen and (max-width: 768px) {
 
-@media screen and (max-width: 960px) {
     #nav {
         padding: 0;
         justify-content: center;
     }
+
+    .nav-tex,
+    .smooth-color {
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width: 992px) {
+
 
     .module {
         flex-direction: column;
@@ -438,11 +449,6 @@
     }
 
 
-
-    .nav-tex,
-    .smooth-color {
-        display: none;
-    }
 
 
 }
