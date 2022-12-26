@@ -27,7 +27,6 @@ const createModuleSession= () => {
 }
 
 
-// ? we may need to find another way to name module if we'd like to use CMS, for example by setting before button id rather than looping from 0 to X.
 // Here we set new value for each module click and load it from into modal body
 // also we show modal
 const updateModuleSession = () => {
